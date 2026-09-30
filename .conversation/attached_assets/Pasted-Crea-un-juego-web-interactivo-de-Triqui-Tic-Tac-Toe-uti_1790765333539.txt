@@ -1,0 +1,96 @@
+Crea un juego web interactivo de **Triqui (Tic-Tac-Toe)** utilizando **HTML, CSS y JavaScript**, pensado como un proyecto académico para estudiantes de Ingeniería de Software.
+
+### Objetivo
+
+Desarrollar un juego de Triqui para dos jugadores en el mismo dispositivo. El proyecto debe tener una interfaz moderna, sencilla, atractiva y responsive.
+
+### Tecnologías
+
+* HTML5
+* CSS3
+* JavaScript puro (Vanilla JavaScript)
+* No utilizar frameworks innecesarios.
+* Mantener el código organizado y fácil de entender.
+
+### Reglas del juego
+
+1. El tablero debe ser de 3x3.
+2. El primer jugador utiliza "X".
+3. El segundo jugador utiliza "O".
+4. Los jugadores se turnan para seleccionar una casilla.
+5. Una casilla ocupada no puede volver a seleccionarse.
+6. Gana el jugador que consiga tres símbolos iguales consecutivos en:
+
+   * una fila,
+   * una columna,
+   * o una diagonal.
+7. Si todas las casillas están ocupadas y ningún jugador gana, mostrar "Empate".
+8. Cuando termina la partida, impedir nuevas jugadas hasta reiniciar el juego.
+
+### Funcionalidades
+
+* Mostrar claramente el turno actual.
+* Detectar automáticamente al ganador.
+* Detectar automáticamente los empates.
+* Resaltar visualmente las tres casillas ganadoras.
+* Incluir un botón "Reiniciar partida".
+* Mostrar el marcador:
+
+  * Jugador X: 0
+  * Jugador O: 0
+  * Empates: 0
+* Mantener el marcador durante las diferentes partidas.
+* Permitir comenzar una nueva partida sin recargar la página.
+* Agregar pequeñas animaciones al colocar X u O.
+* Mostrar mensajes claros para el usuario.
+
+### Diseño
+
+Crear una interfaz moderna y profesional.
+
+Utilizar:
+
+* Un fondo atractivo.
+* Un contenedor central para el juego.
+* Un tablero 3x3 con casillas grandes.
+* Buena separación entre elementos.
+* Botones modernos.
+* Efectos hover.
+* Animaciones suaves.
+* Diseño responsive para computador, tablet y celular.
+
+La interfaz debe estar en español.
+
+### Organización del proyecto
+
+Separar correctamente los archivos:
+
+* index.html
+* style.css
+* script.js
+
+El código debe estar limpio, comentado únicamente donde sea necesario y organizado por funciones.
+
+### Importante sobre el uso de IA
+
+Este proyecto hace parte de una actividad académica donde se debe demostrar el uso de inteligencia artificial para generar una estructura inicial y posteriormente mejorarla.
+
+Por eso:
+
+1. Genera primero una implementación funcional y clara.
+2. No agregues funcionalidades innecesariamente complejas.
+3. Mantén el código comprensible para que podamos explicar cómo funciona durante la presentación.
+4. Después de crear el proyecto, incluye una breve explicación de:
+
+   * Cómo funciona la lógica del juego.
+   * Cómo se detecta un ganador.
+   * Cómo se detecta un empate.
+   * Cómo se controla el turno.
+   * Cómo se actualiza el marcador.
+   * Qué partes podrían mejorarse posteriormente.
+
+### Resultado esperado
+
+El proyecto debe quedar completamente funcional dentro de Replit y listo para ejecutarse y compartirse mediante un enlace público.
+
+No quiero solamente una demostración visual. Todas las funciones del juego deben funcionar realmente mediante JavaScript.

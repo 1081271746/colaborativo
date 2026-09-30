@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Triqui — dos turnos, una jugada</title>
+    <meta name="description" content="Un tablero de Triqui para dos personas en el mismo dispositivo." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/src/style.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="site-header">
+        <a class="brand" href="/" aria-label="Triqui, volver al inicio">
+          <span class="brand-mark" aria-hidden="true">X•O</span>
+          <span class="brand-name">Triqui</span>
+        </a>
+        <p class="header-note">Dos personas · un mismo dispositivo</p>
+      </header>
+
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow">Partida local</p>
+          <h1 class="hero-title" id="page-title">Piensa.<br /><em>Marca.</em> Gana.</h1>
+          <p class="hero-copy">
+            Un duelo breve y directo: coloca tres símbolos en línea antes de que tu rival cierre el tablero.
+          </p>
+        </div>
+        <aside class="hero-aside" aria-label="Reglas rápidas">
+          <p class="eyebrow">Regla rápida</p>
+          <p>Cada jugador ocupa una casilla por turno. Las diagonales también cuentan.</p>
+        </aside>
+      </section>
+
+      <section class="game-layout" aria-label="Partida de Triqui">
+        <article class="game-panel">
+          <div class="status-row">
+            <p class="turn-indicator" id="status-message" role="status" aria-live="polite">
+              Turno del jugador X
+            </p>
+            <span class="turn-dot" id="turn-dot" data-player="X" aria-hidden="true"></span>
+            <p class="round-label" id="round-label">Ronda 1</p>
+          </div>
+
+          <div class="board-wrap">
+            <div class="board" id="game-board" role="grid" aria-label="Tablero de Triqui">
+              <button class="cell" type="button" data-cell="0" role="gridcell" aria-label="Casilla 1, vacía"></button>
+              <button class="cell" type="button" data-cell="1" role="gridcell" aria-label="Casilla 2, vacía"></button>
+              <button class="cell" type="button" data-cell="2" role="gridcell" aria-label="Casilla 3, vacía"></button>
+              <button class="cell" type="button" data-cell="3" role="gridcell" aria-label="Casilla 4, vacía"></button>
+              <button class="cell" type="button" data-cell="4" role="gridcell" aria-label="Casilla 5, vacía"></button>
+              <button class="cell" type="button" data-cell="5" role="gridcell" aria-label="Casilla 6, vacía"></button>
+              <button class="cell" type="button" data-cell="6" role="gridcell" aria-label="Casilla 7, vacía"></button>
+              <button class="cell" type="button" data-cell="7" role="gridcell" aria-label="Casilla 8, vacía"></button>
+              <button class="cell" type="button" data-cell="8" role="gridcell" aria-label="Casilla 9, vacía"></button>
+            </div>
+          </div>
+
+          <div class="game-actions">
+            <button class="primary-button" id="reset-game" type="button">Reiniciar partida</button>
+          </div>
+        </article>
+
+        <aside class="score-panel" aria-labelledby="score-title">
+          <h2 class="section-title" id="score-title">Marcador</h2>
+          <p class="score-intro">La serie sigue aunque empiece otra ronda.</p>
+          <dl class="score-list">
+            <div class="score-item">
+              <dt class="score-term"><span class="score-symbol" aria-hidden="true">X</span>Jugador X</dt>
+              <dd class="score-value" id="score-x">0</dd>
+            </div>
+            <div class="score-item">
+              <dt class="score-term"><span class="score-symbol o" aria-hidden="true">O</span>Jugador O</dt>
+              <dd class="score-value" id="score-o">0</dd>
+            </div>
+            <div class="score-item">
+              <dt class="score-term"><span class="score-symbol draw" aria-hidden="true">=</span>Empates</dt>
+              <dd class="score-value" id="score-draws">0</dd>
+            </div>
+          </dl>
+          <p class="score-note">Guardado en este dispositivo <strong>·</strong> listo para la revancha</p>
+        </aside>
+      </section>
+
+      <section class="explain-panel" aria-labelledby="explain-title">
+        <div>
+          <p class="eyebrow">Para la exposición</p>
+          <h2 class="explain-heading" id="explain-title">La lógica detrás<br /><span>de la partida.</span></h2>
+        </div>
+        <div class="explain-content">
+          <div class="explain-block">
+            <h3>Tablero y ganador</h3>
+            <p>El tablero se representa con nueve posiciones. Después de cada jugada se comparan las ocho combinaciones posibles de tres casillas: filas, columnas y diagonales.</p>
+          </div>
+          <div class="explain-block">
+            <h3>Turnos y empate</h3>
+            <p>Una variable indica si es el turno de X o de O y cambia solo después de una jugada válida. Si no hay línea ganadora y las nueve posiciones están ocupadas, la partida termina en empate.</p>
+          </div>
+          <div class="explain-block">
+            <h3>Marcador y futuras mejoras</h3>
+            <p>Al terminar, se suma el resultado correspondiente y se guarda con <code>localStorage</code>, por eso sobrevive a una recarga. Después podrían añadirse un modo contra la computadora, nombres de jugadores o un historial de rondas.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script type="module" src="/src/script.js"></script>
+  </body>
+</html>
